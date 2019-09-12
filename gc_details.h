@@ -32,6 +32,6 @@ template <class T>
 bool operator==(const PtrDetails<T> &ob1,
                 const PtrDetails<T> &ob2)
 {
-    return obj_1.arraySize == obj_2.arraySize;
+    return ob1.arraySize == ob2.arraySize;
     // TODO: Implement operator==
 }
