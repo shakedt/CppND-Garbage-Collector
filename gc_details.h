@@ -30,5 +30,5 @@ bool operator==(const PtrDetails<T> &ob1,
                 const PtrDetails<T> &ob2)
 {
     // TODO: Implement operator==
-    return obj1.memptr == obj.memPtr;
+    return obj1.memPtr == obj.memPtr;
 }
