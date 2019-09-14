@@ -18,11 +18,8 @@ array, then arraySize contains its size */
     // If this is an array, then size specifies
     // the size of the array.
 
-    PtrDetails(int &ptr, int arraySize)
+    PtrDetails(void)
     {
-        if(arraySize) {
-            isArray = true;
-        }
         // TODO: Implement PtrDetails
     }
 };
@@ -32,6 +29,6 @@ template <class T>
 bool operator==(const PtrDetails<T> &ob1,
                 const PtrDetails<T> &ob2)
 {
-    return ob1.arraySize == ob2.arraySize;
     // TODO: Implement operator==
+    return obj1.memptr == obj.memPtr;
 }
