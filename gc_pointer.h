@@ -130,10 +130,12 @@ Pointer<T,size>::Pointer(const Pointer &ob){
 
     // TODO: Implement Pointer constructor
     // Lab: Smart Pointer Project Lab
+    std::cout << "inside copy function";
     typename std::list<PtrDetails<T>>::iterator p;
 
     p = findPtrInfo(ob.addr);
     p->refcount++;
+
     addr = ob.addr;
     arraySize = ob.arraySize;
 
@@ -157,7 +159,10 @@ Pointer<T, size>::~Pointer(){
     if(p->refcount) {
         p->refcount--;
     }
-    collect();
+  
+    if(p->refcount == 0) {
+        collect();
+    }
 }
 
 // Collect garbage. Returns true if at least
