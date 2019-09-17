@@ -181,17 +181,16 @@ bool Pointer<T, size>::collect(){
             
             memfreed = true;
             refContainer.remove(*p);
-        }
-        if(p->memPtr) {
-            if(p->isArray) {
-                delete[] p->memPtr;
-            } else {
-                delete p->memPtr;
-
+    
+            if(p->memPtr) {
+                if(p->isArray) {
+                    delete[] p->memPtr;
+                } else {
+                    delete p->memPtr;
+                }
             }
+            break;
         }
-
-        break;
     } while (p != refContainer.end());
 
     return memfreed;
